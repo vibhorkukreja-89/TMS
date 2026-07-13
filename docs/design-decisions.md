@@ -165,4 +165,31 @@ const VALID_TRANSITIONS: Record<TicketStatus, TicketStatus[]> = {
 
 ---
 
+## DD-13: Prisma 7 requires `@prisma/adapter-pg` driver adapter
+
+**Decision:** Use `@prisma/adapter-pg` (with `pg` Pool) to initialise `PrismaClient` instead of the legacy zero-arg constructor.
+
+**Rationale:**
+- Prisma 7's new `prisma-client` generator removed the implicit datasource URL fallback from the client constructor. `PrismaClientOptions` now requires either an `adapter` or `accelerateUrl` — `new PrismaClient()` with no arguments is a TypeScript error.
+- `@prisma/adapter-pg` is the official Prisma-maintained PostgreSQL adapter; it wraps `pg.Pool` and is the recommended path for direct Postgres connections in Prisma 7.
+- The `Pool` is created once and shared via the global singleton in `src/db.ts`, so connection limits are respected.
+
+**Alternatives rejected:**
+- `accelerateUrl`: Requires a paid Prisma Accelerate account — not appropriate for a local dev/assessment project.
+- Downgrading to Prisma 4/5: Would contradict the already-run migration and generated client.
+
+---
+
+## DD-14: `tsx` replaces `ts-node` as the TypeScript runner
+
+**Decision:** Use `tsx` (esbuild-backed TypeScript executor) instead of `ts-node` for running scripts (`npm run dev`, `npm run db:seed`).
+
+**Rationale:**
+- `ts-node` 10.x is incompatible with TypeScript 7 — it crashes with `Cannot read properties of undefined (reading 'fileExists')` because the TS compiler API changed.
+- `tsx` uses esbuild to transpile TypeScript with no type-checking overhead, making hot-reloads instant.
+- `tsx watch` replaces `ts-node-dev` for the dev server with the same DX but full TS 7 compatibility.
+- `tsx` is a well-maintained, widely-adopted package (19M+ weekly downloads) with zero transitive dependencies.
+
+---
+
 _Add new decisions below as they arise during implementation._
