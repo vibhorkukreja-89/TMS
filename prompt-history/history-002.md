@@ -29,3 +29,17 @@ _Auto-generated. Max 10 entries per file._
 **Summary:** Installed @swc/jest (ts-jest incompatible with TS7), wrote jest.config.js + 15-test suite covering all 5 valid and 9 invalid transitions plus a validation test; all 15 pass in <1s. Bug 001 documented in debugging-log.md. Opened PR #3 at https://github.com/vibhorkukreja-89/TMS/pull/3.
 
 ---
+
+## Prompt 15
+**User:** Do a PR review of "Phase 2 — State Machine Integration Tests" PR
+
+**Summary:** Performed manual review of all files in the boilerplate branch. Found 2 medium (user.router bypasses service, testUserId unguarded), 2 low (optional chaining, redundant cast), and 1 info (detectOpenHandles) findings. Bugbot subagent was unavailable.
+
+---
+
+## Prompt 16
+**User:** Fix the changes required and update the PR.
+
+**Summary:** Addressed all 5 review findings: added user.service.ts, fixed testUserId guard, removed ?. from assertions, removed redundant cast, replaced detectOpenHandles with DATABASE_URL_TEST isolation setup. Also added jest "types" to tsconfig. 15/15 tests pass, pushed to PR #3.
+
+---
