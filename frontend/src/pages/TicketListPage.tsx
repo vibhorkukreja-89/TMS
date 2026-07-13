@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { ErrorMessage } from '@/components/ErrorMessage'
 import { TicketCard } from '@/components/TicketCard'
 import { useTickets } from '@/hooks/useTickets'
+import { formatStatusLabel } from '@/lib/status-transitions'
 import type { TicketStatus } from '@/types'
 
 const STATUS_OPTIONS: Array<TicketStatus | ''> = [
@@ -53,7 +54,7 @@ export function TicketListPage(): React.ReactElement {
         >
           {STATUS_OPTIONS.map((option) => (
             <option key={option || 'all'} value={option}>
-              {option === '' ? 'All statuses' : option.replaceAll('_', ' ')}
+              {option === '' ? 'All statuses' : formatStatusLabel(option)}
             </option>
           ))}
         </select>
@@ -67,7 +68,7 @@ export function TicketListPage(): React.ReactElement {
         <p className="muted">No tickets match your filters.</p>
       ) : null}
 
-      <div className="ticket-list">
+      <div className={`ticket-list${loading ? ' ticket-list-loading' : ''}`}>
         {tickets.map((ticket) => (
           <TicketCard key={ticket.id} ticket={ticket} />
         ))}

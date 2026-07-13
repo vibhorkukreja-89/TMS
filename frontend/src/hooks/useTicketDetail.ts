@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { getTicket, listComments } from '@/api/tickets.api'
 import { ApiClientError } from '@/types'
 import type { Comment, Ticket } from '@/types'
@@ -16,8 +16,11 @@ export function useTicketDetail(id: string | undefined): UseTicketDetailResult {
   const [comments, setComments] = useState<Comment[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<ApiClientError | null>(null)
+  const requestIdRef = useRef(0)
 
   const refetch = useCallback(async (): Promise<void> => {
+    const requestId = ++requestIdRef.current
+
     if (!id) {
       setTicket(null)
       setComments([])
@@ -32,9 +35,11 @@ export function useTicketDetail(id: string | undefined): UseTicketDetailResult {
         getTicket(id),
         listComments(id),
       ])
+      if (requestId !== requestIdRef.current) return
       setTicket(ticketData)
       setComments(commentData)
     } catch (err) {
+      if (requestId !== requestIdRef.current) return
       setTicket(null)
       setComments([])
       setError(
@@ -43,7 +48,9 @@ export function useTicketDetail(id: string | undefined): UseTicketDetailResult {
           : new ApiClientError('UNKNOWN_ERROR', 'Failed to load ticket', 0)
       )
     } finally {
-      setLoading(false)
+      if (requestId === requestIdRef.current) {
+        setLoading(false)
+      }
     }
   }, [id])
 

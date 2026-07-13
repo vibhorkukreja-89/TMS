@@ -218,6 +218,11 @@ textarea {
   box-shadow: var(--shadow);
 }
 
+.ticket-list-loading {
+  opacity: 0.55;
+  pointer-events: none;
+}
+
 .ticket-row {
   display: flex;
   justify-content: space-between;

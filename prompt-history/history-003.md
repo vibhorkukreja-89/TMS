@@ -36,3 +36,10 @@ _Auto-generated. Max 10 entries per file._
 **Summary:** Committed Phase 3 frontend + validate fix; opened PR #4 (https://github.com/vibhorkukreja-89/TMS/pull/4) and marked the Phase 3 PR checkbox in tasks.md.
 
 ---
+
+## Prompt 31
+**User:** Do a PR review for #4 Phase 3 — Frontend Foundation
+
+**Summary:** Reviewed PR #4 via code-reviewer. No Critical issues; Important: show updatedAt on detail (AC-3) and clarify backend Jest lockfile churn before merge.
+
+---

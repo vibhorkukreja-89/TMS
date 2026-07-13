@@ -218,8 +218,9 @@ export function TicketDetailPage(): React.ReactElement {
             />
 
             <p className="muted">
-              Created by {ticket.createdBy.name} ·{' '}
-              {new Date(ticket.createdAt).toLocaleString()}
+              Created by {ticket.createdBy.name} · Created{' '}
+              {new Date(ticket.createdAt).toLocaleString()} · Updated{' '}
+              {new Date(ticket.updatedAt).toLocaleString()}
             </p>
 
             <ErrorMessage error={localError ?? updateMutation.error} />
