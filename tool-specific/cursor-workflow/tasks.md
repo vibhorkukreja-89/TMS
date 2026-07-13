@@ -37,42 +37,42 @@
 
 - [x] `prisma init` — configure PostgreSQL provider
 - [x] Write `schema.prisma` — User, Ticket, Comment models
-- [ ] Run `prisma migrate dev --name init` ← needs DATABASE_URL in backend/.env
-- [x] Write `prisma/seed.ts` — 3+ users, 5+ tickets, 2+ comments (fictional data, R-SEC-2)
-- [ ] Verify `prisma db seed` runs without errors ← needs DATABASE_URL in backend/.env
+- [x] Run `prisma migrate dev --name init` ← migration applied (20260713130455_init)
+- [x] Write `prisma/seed.ts` — 3 users, 6 tickets, 5 comments (fictional data, R-SEC-2)
+- [x] Verify `prisma db seed` runs without errors ← TypeScript clean, runs via `npm run db:seed`
 - [x] Update `docs/design-decisions.md` with data model choices
 
 ### 1.3 Repository layer
 
-- [ ] `src/repositories/user.repository.ts` — findAll, findById
-- [ ] `src/repositories/ticket.repository.ts` — findAll (with search/filter), findById, create, update
-- [ ] `src/repositories/comment.repository.ts` — findByTicketId, create
+- [x] `src/repositories/user.repository.ts` — findAll, findById
+- [x] `src/repositories/ticket.repository.ts` — findAll (with search/filter), findById, create, update
+- [x] `src/repositories/comment.repository.ts` — findByTicketId, create
 
 ### 1.4 Service layer
 
-- [ ] `src/services/ticket.service.ts`:
+- [x] `src/services/ticket.service.ts`:
   - `createTicket()`
   - `getTickets(search?, status?)` — search + filter
   - `getTicketById()`
   - `updateTicket()` (fields only)
   - `changeStatus()` — state machine enforced here
-- [ ] `src/services/comment.service.ts` — `addComment()`
-- [ ] Update `docs/design-decisions.md` with state machine implementation choice
+- [x] `src/services/comment.service.ts` — `addComment()`
+- [x] Update `docs/design-decisions.md` with state machine implementation choice
 
 ### 1.5 Validation
 
-- [ ] `src/validators/ticket.validator.ts` — createTicketSchema, updateTicketSchema, changeStatusSchema
-- [ ] `src/validators/comment.validator.ts` — createCommentSchema
-- [ ] `src/middleware/validate.ts` — Zod validation middleware
+- [x] `src/validators/ticket.validator.ts` — createTicketSchema, updateTicketSchema, changeStatusSchema
+- [x] `src/validators/comment.validator.ts` — createCommentSchema
+- [x] `src/middleware/validate.ts` — Zod validation middleware
 
 ### 1.6 Routes and middleware
 
-- [ ] `src/middleware/error-handler.ts` — central error handler
-- [ ] `src/routes/ticket.router.ts` — all ticket endpoints
-- [ ] `src/routes/comment.router.ts` — POST /:id/comments
-- [ ] `src/routes/user.router.ts` — GET /users
-- [ ] `src/app.ts` — Express app setup, route mounting, middleware
-- [ ] `src/server.ts` — start server
+- [x] `src/middleware/error-handler.ts` — central error handler
+- [x] `src/routes/ticket.router.ts` — all ticket endpoints
+- [x] `src/routes/comment.router.ts` — POST /:id/comments
+- [x] `src/routes/user.router.ts` — GET /users
+- [x] `src/app.ts` — Express app setup, route mounting, middleware
+- [x] `src/server.ts` — start server
 - [ ] **Open PR: Phase 1 — Backend Foundation**
 
 ---
