@@ -15,9 +15,9 @@
 - [x] Create `tool-specific/cursor-workflow/` artifacts
 - [x] Create `docs/` scaffold
 - [x] Create project-level skills in `.cursor/skills/`
-- [ ] Complete `docs/requirement-analysis.md`
-- [ ] Complete `docs/design-decisions.md` (data model decisions)
-- [ ] Initialise git repository with initial commit
+- [x] Complete `docs/requirement-analysis.md`
+- [x] Complete `docs/design-decisions.md` (data model decisions)
+- [x] Initialise git repository with initial commit
 - [ ] **Open PR: Phase 0 — Project Setup & Planning**
 
 ---
