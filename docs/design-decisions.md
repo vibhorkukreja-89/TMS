@@ -192,4 +192,56 @@ const VALID_TRANSITIONS: Record<TicketStatus, TicketStatus[]> = {
 
 ---
 
+## DD-15: Frontend data layer — custom hooks + typed fetch
+
+**Decision:** Phase 3 uses thin `api/` fetch wrappers + custom hooks (`useTickets`, `useTicketDetail`, `useUsers`, `useMutation`). No React Query / SWR / axios.
+
+**Rationale:**
+- Matches `tasks.md` and keeps the dependency surface minimal (R-ARCH-3 / DD-8)
+- Clear layering for assessment: pages compose hooks; hooks call API; API never lives in components
+- Enough structure for loading/error without a cache library at Core scope
+
+**Alternatives rejected:**
+- Page-local `useEffect` only: duplicates search/error logic; weaker task alignment
+- React Query: excellent DX but adds a dependency and is unnecessary for Core
+
+---
+
+## DD-16: Ticket list — compact rows
+
+**Decision:** Ticket list uses compact row items (`TicketCard` as a row), not a dense HTML table and not a card grid.
+
+**Rationale:**
+- Scannable without table markup complexity
+- Mobile-friendly; still denser than large cards
+- Keeps the named `TicketCard` component from the task list meaningful
+
+---
+
+## DD-17: No global current user — per-form `createdBy` select
+
+**Decision:** `createdById` is chosen via a `UserSelect` dropdown on create-ticket and add-comment forms. No header “acting as” session user.
+
+**Rationale:**
+- Spec de-scopes auth; requirement analysis allows hardcoded or dropdown
+- Per-form select makes authorship explicit in demos without implying fake login
+- Avoids global state that would look like incomplete auth
+
+**Alternatives rejected:**
+- Header session dropdown: convenient but implies a logged-in user
+- Hardcoded single user: too limiting for multi-agent comment demos
+
+---
+
+## DD-18: Ticket detail — split layout with status side panel
+
+**Decision:** Detail page is a split layout: main column for field edit + comments; side panel for current status and `StatusControl` (valid next transitions only).
+
+**Rationale:**
+- Status changes are the highest-judgment UX; isolating them makes the state machine visible
+- Comments and field edits remain the primary reading/working column
+- Side panel stacks below on narrow viewports
+
+---
+
 _Add new decisions below as they arise during implementation._
