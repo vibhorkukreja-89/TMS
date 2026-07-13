@@ -18,7 +18,7 @@
 - [x] Complete `docs/requirement-analysis.md`
 - [x] Complete `docs/design-decisions.md` (data model decisions)
 - [x] Initialise git repository with initial commit
-- [ ] **Open PR: Phase 0 — Project Setup & Planning**
+- [x] **Open PR: Phase 0 — Project Setup & Planning**
 
 ---
 
