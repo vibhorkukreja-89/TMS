@@ -57,3 +57,17 @@ _Auto-generated. Max 10 entries per file._
 **Summary:** Ran full API E2E + restart persistence checks (all pass); polished fetchJson validation details; documented Phase 4 evidence; opening Phase 4 PR.
 
 ---
+
+## Prompt 34
+**User:** Briefly inform the user about the task result and perform any follow-up actions (if needed). If there's no follow-ups needed, don't explicitly say that.
+
+**Summary:** Persistence-restart shell task was aborted and left :3000 down; restarted backend `npm run dev` so the API is available again.
+
+---
+
+## Prompt 35
+**User:** Briefly inform the user about the task result and perform any follow-up actions (if needed). If there's no follow-ups needed, don't explicitly say that.
+
+**Summary:** Backend restart task was terminated by the user; informed them :3000 may be down and how to start it with npm run dev.
+
+---

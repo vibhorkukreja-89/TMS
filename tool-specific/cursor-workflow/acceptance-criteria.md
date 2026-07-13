@@ -151,9 +151,9 @@
 ## Definition of Done (Core)
 
 The Core submission is complete when:
-- [ ] All 12 acceptance criteria above are verifiable
-- [ ] `README.md` allows a clean-clone setup without additional instructions
-- [ ] State machine integration tests all pass
-- [ ] `prompt-history/` contains the actual prompt log
-- [ ] `docs/` contains all four artifact files with real content
-- [ ] No secrets are committed
+- [x] All 12 acceptance criteria above are verifiable
+- [x] `README.md` allows a clean-clone setup without additional instructions
+- [x] State machine integration tests all pass
+- [x] `prompt-history/` contains the actual prompt log
+- [x] `docs/` contains all four artifact files with real content
+- [x] No secrets are committed

@@ -145,13 +145,13 @@
 
 ## Phase 5 — Documentation and Submission
 
-- [ ] Write `README.md` with complete setup instructions (clean-clone test)
-- [ ] Complete `docs/reflection.md`
-- [ ] Verify `prompt-history/` is populated
-- [ ] Verify `docs/` has all four artifact files with real content
-- [ ] Verify `.env` is not committed (`git status` check)
-- [ ] Verify all state machine integration tests pass
-- [ ] **Open PR: Phase 5 — Final Submission (with complete PR description)**
+- [x] Write `README.md` with complete setup instructions (clean-clone test)
+- [x] Complete `docs/reflection.md`
+- [x] Verify `prompt-history/` is populated
+- [x] Verify `docs/` has all four artifact files with real content
+- [x] Verify `.env` is not committed (`git status` check)
+- [x] Verify all state machine integration tests pass
+- [x] **Open PR: Phase 5 — Final Submission (with complete PR description)** → https://github.com/vibhorkukreja-89/TMS/pull/6
 
 ---
 
