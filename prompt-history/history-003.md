@@ -43,3 +43,17 @@ _Auto-generated. Max 10 entries per file._
 **Summary:** Reviewed PR #4 via code-reviewer. No Critical issues; Important: show updatedAt on detail (AC-3) and clarify backend Jest lockfile churn before merge.
 
 ---
+
+## Prompt 32
+**User:** It look good, apply those fixes and push to the PR
+
+**Summary:** Applied PR #4 review fixes (updatedAt, detail race guard, list dimming, status labels, removed icons.svg), clarified Jest deps in PR body, pushed commit 5fbdf99.
+
+---
+
+## Prompt 33
+**User:** Proceed with Phase 4 — Integration and Polish
+
+**Summary:** Ran full API E2E + restart persistence checks (all pass); polished fetchJson validation details; documented Phase 4 evidence; opening Phase 4 PR.
+
+---
