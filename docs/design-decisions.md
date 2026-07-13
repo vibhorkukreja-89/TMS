@@ -258,4 +258,15 @@ const VALID_TRANSITIONS: Record<TicketStatus, TicketStatus[]> = {
 
 ---
 
+## DD-20: Surface Zod validation `details` in frontend errors
+
+**Decision:** `fetchJson` prefers flattened Zod `error.details` field messages when present, instead of only showing the generic `Validation failed` envelope message.
+
+**Rationale:**
+- Backend validation responses include useful per-field messages (e.g. `Title is required`) under `details`
+- Showing only `Validation failed` made AC-1/AC-9 UI feedback weaker than the API already provides
+- Keeps a single enrichment point in the API client rather than per-form parsing
+
+---
+
 _Add new decisions below as they arise during implementation._

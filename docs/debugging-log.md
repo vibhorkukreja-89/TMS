@@ -118,4 +118,45 @@ Every list request uses `validate(ticketQuerySchema, "query")`, so the list alwa
 
 ---
 
+## Phase 4 verification — Integration and Polish
+
+**Date:** 2026-07-13  
+**Phase:** Phase 4 — Integration and Polish
+
+**Evidence (API E2E against running servers):**
+
+| Check | Result |
+|---|---|
+| Create ticket (201, status OPEN) | ✅ |
+| List contains created ticket | ✅ |
+| Detail fetch | ✅ |
+| Update title/description/priority/assignee | ✅ |
+| Status OPEN → IN_PROGRESS | ✅ |
+| Add comment | ✅ |
+| Search `phase4 e2e` | ✅ |
+| Combined search + status filter | ✅ |
+| Invalid transition OPEN → CLOSED → 422 INVALID_TRANSITION | ✅ |
+| Empty title → 400 VALIDATION_ERROR | ✅ |
+| Empty comment → 400 VALIDATION_ERROR | ✅ |
+| Backend restart; ticket + comment still via API | ✅ |
+| Frontend `npm run build` | ✅ |
+| Backend `npm test` (15/15) | ✅ |
+
+**UI error-path review:**
+
+| Surface | User-visible message? |
+|---|---|
+| List fetch failure | ✅ `ErrorMessage` via `useTickets` |
+| Detail 404 / load failure | ✅ `ErrorMessage` |
+| Create validation (empty title / missing createdBy) | ✅ local + API via `ErrorMessage` |
+| Create / users load API errors | ✅ |
+| Detail save / status / comment mutations | ✅ |
+| Invalid transition (if 422 returned) | ✅ `ErrorMessage` + `INVALID_TRANSITION` code |
+| Network down | ✅ `NETWORK_ERROR` friendly copy in `fetchJson` |
+| Status control UX | ✅ Only valid next statuses offered (`StatusControl`) |
+
+**Polish applied:** `fetchJson` now surfaces Zod `details` field messages (e.g. `title: Title is required`) instead of only the generic `Validation failed` string.
+
+---
+
 _Add entries below as bugs are encountered during development._

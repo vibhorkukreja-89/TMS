@@ -134,11 +134,11 @@
 
 ## Phase 4 — Integration and Polish
 
-- [ ] Verify end-to-end: create → list → detail → update → status change → comment → search
-- [ ] Test invalid state transition shows error in UI (not a broken screen)
-- [ ] Test validation error (empty title) shows form error
-- [ ] Test data persists after server restart
-- [ ] Review all API error paths — do they all show a user-visible message?
+- [x] Verify end-to-end: create → list → detail → update → status change → comment → search
+- [x] Test invalid state transition shows error in UI (not a broken screen)
+- [x] Test validation error (empty title) shows form error
+- [x] Test data persists after server restart
+- [x] Review all API error paths — do they all show a user-visible message?
 - [ ] **Open PR: Phase 4 — Integration and Polish**
 
 ---
