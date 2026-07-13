@@ -128,7 +128,7 @@
 ### 3.6 Routing
 
 - [x] Set up react-router-dom routes: `/`, `/tickets/new`, `/tickets/:id`
-- [ ] **Open PR: Phase 3 — Frontend Foundation**
+- [x] **Open PR: Phase 3 — Frontend Foundation** → https://github.com/vibhorkukreja-89/TMS/pull/4
 
 ---
 

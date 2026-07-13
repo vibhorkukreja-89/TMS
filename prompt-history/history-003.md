@@ -29,3 +29,10 @@ _Auto-generated. Max 10 entries per file._
 **Summary:** Applied review fixes: strict TS, comment clear-on-success only, id narrowing, request-race guard, Content-Type on body only, envelope types, removed Vite scaffold assets. Build/lint pass.
 
 ---
+
+## Prompt 30
+**User:** Yes, commit the changes and open the PR
+
+**Summary:** Committed Phase 3 frontend + validate fix; opened PR #4 (https://github.com/vibhorkukreja-89/TMS/pull/4) and marked the Phase 3 PR checkbox in tasks.md.
+
+---
