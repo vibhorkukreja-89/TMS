@@ -244,4 +244,18 @@ const VALID_TRANSITIONS: Record<TicketStatus, TicketStatus[]> = {
 
 ---
 
+## DD-19: Express 5 — redefine `req.query` after Zod validation
+
+**Decision:** Validation middleware must not assign to `req.query` / `req.params` directly. Use `Object.defineProperty` to replace the value after Zod parse (body may still be assigned normally).
+
+**Rationale:**
+- Express 5 exposes `query`/`params` as getter-only on the request; assignment throws and became a 500 on every ticket list call
+- Handlers continue to read `req.query` without introducing a parallel `req.validated` shape
+
+**Alternatives rejected:**
+- Attach `req.validatedQuery` and update every handler — more churn for no product benefit
+- Drop query validation middleware — would weaken the validation boundary
+
+---
+
 _Add new decisions below as they arise during implementation._

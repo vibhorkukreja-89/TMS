@@ -94,4 +94,28 @@ All 15 tests passed. No flakiness observed.
 
 ---
 
+## Bug 002: Ticket list returns 500 — Express 5 read-only `req.query`
+
+**Date:** 2026-07-13  
+**Phase:** Phase 3 — Frontend Foundation
+
+**Symptom:** Landing page showed `An unexpected error occurred` immediately. Backend returned HTTP 500 for `GET /api/tickets`. `GET /api/users` worked.
+
+**Context given to AI:** Screenshot of TMS Tickets page with pink error banner.
+
+**Hypotheses explored:**
+1. Frontend fetch/proxy misconfigured — ruled out; same 500 hit directly on `:3000`
+2. Database / Prisma failure — ruled out; users endpoint returned seed data
+3. Validation middleware crashing on query — verified via server log
+
+**Root cause:** Express 5 makes `req.query` a getter-only property. `validate.ts` did `req[target] = result.data` after Zod parse, which throws:
+`TypeError: Cannot set property query of #<IncomingMessage> which has only a getter`
+Every list request uses `validate(ticketQuerySchema, "query")`, so the list always 500'd (even with empty query).
+
+**Fix:** In `backend/src/middleware/validate.ts`, assign body normally; for `query`/`params` use `Object.defineProperty` so handlers can still read `req.query`.
+
+**Takeaway:** Express 4 → 5 broke a common “replace req.query with validated data” pattern. Always check framework major-version request object mutability when middleware mutates `req`.
+
+---
+
 _Add entries below as bugs are encountered during development._

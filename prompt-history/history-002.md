@@ -99,3 +99,10 @@ _Auto-generated. Max 10 entries per file._
 **Summary:** Section 1 approved. Presented Design Section 2 covering components, status-machine UX, error handling, and pages.
 
 ---
+
+## Prompt 25
+**User:** yes, proceed with the design doc
+
+**Summary:** Wrote and committed Phase 3 frontend design spec plus DD-15–DD-18. Asked user to review the spec before the implementation plan.
+
+---

@@ -101,33 +101,33 @@
 
 ### 3.2 Types and API client
 
-- [ ] `src/types/index.ts` — Ticket, User, Comment, ApiResponse types
-- [ ] `src/api/tickets.api.ts` — typed fetch wrappers for all ticket endpoints
-- [ ] `src/api/users.api.ts` — users fetch wrapper
+- [x] `src/types/index.ts` — Ticket, User, Comment, ApiResponse types
+- [x] `src/api/tickets.api.ts` — typed fetch wrappers for all ticket endpoints
+- [x] `src/api/users.api.ts` — users fetch wrapper
 
 ### 3.3 Core pages
 
-- [ ] `src/pages/TicketListPage.tsx` — list, search bar, status filter, create button
-- [ ] `src/pages/TicketDetailPage.tsx` — detail view, comments, status control, edit form
-- [ ] `src/pages/CreateTicketPage.tsx` — create ticket form
+- [x] `src/pages/TicketListPage.tsx` — list, search bar, status filter, create button
+- [x] `src/pages/TicketDetailPage.tsx` — detail view, comments, status control, edit form
+- [x] `src/pages/CreateTicketPage.tsx` — create ticket form
 
 ### 3.4 Key components
 
-- [ ] `src/components/TicketCard.tsx` — ticket summary card
-- [ ] `src/components/StatusBadge.tsx` — coloured status indicator
-- [ ] `src/components/StatusControl.tsx` — shows only valid next transitions
-- [ ] `src/components/CommentThread.tsx` — comment list + add comment form
-- [ ] `src/components/ErrorMessage.tsx` — user-visible error display
+- [x] `src/components/TicketCard.tsx` — ticket summary card
+- [x] `src/components/StatusBadge.tsx` — coloured status indicator
+- [x] `src/components/StatusControl.tsx` — shows only valid next transitions
+- [x] `src/components/CommentThread.tsx` — comment list + add comment form
+- [x] `src/components/ErrorMessage.tsx` — user-visible error display
 
 ### 3.5 Hooks
 
-- [ ] `src/hooks/useTickets.ts` — ticket list + search/filter state
-- [ ] `src/hooks/useTicketDetail.ts` — single ticket + comments
-- [ ] `src/hooks/useMutation.ts` — generic create/update with loading/error state
+- [x] `src/hooks/useTickets.ts` — ticket list + search/filter state
+- [x] `src/hooks/useTicketDetail.ts` — single ticket + comments
+- [x] `src/hooks/useMutation.ts` — generic create/update with loading/error state
 
 ### 3.6 Routing
 
-- [ ] Set up react-router-dom routes: `/`, `/tickets/new`, `/tickets/:id`
+- [x] Set up react-router-dom routes: `/`, `/tickets/new`, `/tickets/:id`
 - [ ] **Open PR: Phase 3 — Frontend Foundation**
 
 ---

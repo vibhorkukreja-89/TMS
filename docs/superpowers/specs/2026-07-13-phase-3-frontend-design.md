@@ -1,7 +1,7 @@
 # Phase 3 — Frontend Foundation Design
 
 > Date: 2026-07-13  
-> Status: Draft pending user review  
+> Status: Approved  
 > Scope: Phase 3 only (types, API client, hooks, pages, components, routing). Phase 4 covers E2E polish.
 
 ---
