@@ -79,14 +79,14 @@
 
 ## Phase 2 — State Machine Integration Tests (mandatory)
 
-- [ ] Install Jest + Supertest + ts-jest
-- [ ] Configure `jest.config.ts`
-- [ ] Create `src/__tests__/ticket-status.test.ts`
-- [ ] Write tests for all 5 valid transitions (expect 200)
-- [ ] Write tests for representative invalid transitions (expect 422)
-- [ ] Verify all tests pass: `npm test`
-- [ ] Record test run output in `docs/debugging-log.md` (if any failures encountered)
-- [ ] **Open PR: Phase 2 — State Machine Integration Tests**
+- [x] Install Jest + Supertest + @swc/jest (ts-jest incompatible with TS7 — see debugging-log Bug 001)
+- [x] Configure `jest.config.js` (CJS — jest.config.ts cannot be loaded with TS7)
+- [x] Create `src/__tests__/ticket-status.test.ts`
+- [x] Write tests for all 5 valid transitions (expect 200)
+- [x] Write tests for representative invalid transitions (expect 422)
+- [x] Verify all tests pass: `npm test` → 15/15 passed in 0.998s
+- [x] Record test run output in `docs/debugging-log.md`
+- [x] **Open PR: Phase 2 — State Machine Integration Tests** → https://github.com/vibhorkukreja-89/TMS/pull/3
 
 ---
 
