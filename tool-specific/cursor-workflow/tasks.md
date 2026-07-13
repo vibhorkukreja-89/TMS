@@ -73,7 +73,7 @@
 - [x] `src/routes/user.router.ts` — GET /users
 - [x] `src/app.ts` — Express app setup, route mounting, middleware
 - [x] `src/server.ts` — start server
-- [ ] **Open PR: Phase 1 — Backend Foundation**
+- [x] **Open PR: Phase 1 — Backend Foundation**
 
 ---
 
