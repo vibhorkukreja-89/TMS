@@ -21,7 +21,7 @@ const request = supertest(app);
 
 // ─── Test-data helpers ────────────────────────────────────────────────────────
 
-let testUserId: string;
+let testUserId: string | null = null;
 
 async function seedUser(): Promise<string> {
   const user = await prisma.user.create({
@@ -35,6 +35,7 @@ async function seedUser(): Promise<string> {
 }
 
 async function createTicketInStatus(status: TicketStatus): Promise<string> {
+  if (!testUserId) throw new Error("beforeAll failed — testUserId not set");
   const ticket = await prisma.ticket.create({
     data: {
       title: `[test] transition from ${status}`,
@@ -60,8 +61,10 @@ beforeAll(async () => {
 });
 
 afterAll(async () => {
-  await prisma.ticket.deleteMany({ where: { createdById: testUserId } });
-  await prisma.user.delete({ where: { id: testUserId } });
+  if (testUserId) {
+    await prisma.ticket.deleteMany({ where: { createdById: testUserId } });
+    await prisma.user.delete({ where: { id: testUserId } });
+  }
   await prisma.$disconnect();
 });
 
@@ -117,8 +120,8 @@ describe("Invalid transitions → HTTP 422 + INVALID_TRANSITION", () => {
     const res = await patchStatus(id, to);
 
     expect(res.status).toBe(422);
-    expect(res.body.error?.code).toBe("INVALID_TRANSITION");
-    expect(res.body.error?.message).toMatch(/Cannot transition/i);
+    expect(res.body.error.code).toBe("INVALID_TRANSITION");
+    expect(res.body.error.message).toMatch(/Cannot transition/i);
   }
 
   it("OPEN → RESOLVED (skipping IN_PROGRESS)", async () => {
@@ -166,6 +169,6 @@ describe("Validation errors", () => {
     const res = await patchStatus(id, "BOGUS_STATUS");
 
     expect(res.status).toBe(400);
-    expect(res.body.error?.code).toBe("VALIDATION_ERROR");
+    expect(res.body.error.code).toBe("VALIDATION_ERROR");
   });
 });

@@ -75,10 +75,7 @@ router.patch(
   async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
       const { id } = req.params as { id: string };
-      const ticket = await ticketService.changeStatus(
-        id,
-        req.body.status as TicketStatus
-      );
+      const ticket = await ticketService.changeStatus(id, req.body.status);
       res.json({ data: ticket });
     } catch (err) {
       next(err);
