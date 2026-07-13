@@ -22,3 +22,10 @@ _Auto-generated. Max 10 entries per file._
 **Summary:** Opened PR #2 at https://github.com/vibhorkukreja-89/TMS/pull/2 for Phase 1 Backend Foundation. Marked final Phase 1 checkbox in tasks.md and committed. Phase 1 fully complete.
 
 ---
+
+## Prompt 14
+**User:** Proceed with Phase 2 — State Machine Integration Tests
+
+**Summary:** Installed @swc/jest (ts-jest incompatible with TS7), wrote jest.config.js + 15-test suite covering all 5 valid and 9 invalid transitions plus a validation test; all 15 pass in <1s. Bug 001 documented in debugging-log.md. Opened PR #3 at https://github.com/vibhorkukreja-89/TMS/pull/3.
+
+---
