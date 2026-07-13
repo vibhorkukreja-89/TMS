@@ -2,6 +2,10 @@
 
 Internal support ticket app for the JS AI Capability Exercise.
 
+<img width="720" height="831" alt="Screenshot 2026-07-13 at 8 28 15 PM" src="https://github.com/user-attachments/assets/5a2f4809-97a3-4e9e-ba51-5e54dabf769b" />
+<img width="1183" height="949" alt="Screenshot 2026-07-13 at 8 28 06 PM" src="https://github.com/user-attachments/assets/bf016557-cf2c-4bb0-9e50-f4dc7173aea8" />
+
+
 **Stack:** React + TypeScript (Vite) · Node.js + Express + TypeScript · PostgreSQL · Prisma
 
 ---
