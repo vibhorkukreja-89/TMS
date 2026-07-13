@@ -86,7 +86,7 @@
 - [x] Write tests for representative invalid transitions (expect 422)
 - [x] Verify all tests pass: `npm test` → 15/15 passed in 0.998s
 - [x] Record test run output in `docs/debugging-log.md`
-- [ ] **Open PR: Phase 2 — State Machine Integration Tests**
+- [x] **Open PR: Phase 2 — State Machine Integration Tests** → https://github.com/vibhorkukreja-89/TMS/pull/3
 
 ---
 
