@@ -29,3 +29,10 @@ _Auto-generated. Max 10 entries per file._
 **Summary:** Marked all six Core Definition of Done checkboxes in acceptance-criteria.md and pushed to PR #6.
 
 ---
+
+## Prompt 40
+**User:** I need to submit this for review. Create the review-system artifact files (candidate-info, requirements-analysis, acceptance-criteria, implementation-plan, design-notes, api-contract, test-strategy, debugging-notes, code-review-notes, reflection, pr-description) plus grouped ai-prompts/, after understanding the project.
+
+**Summary:** Explored the whole codebase/docs/prompt-history, then authored all 11 submission artifacts at repo root and an ai-prompts/ folder (10 activity-grouped files + index) with accepted/changed/rejected notes per prompt.
+
+---
